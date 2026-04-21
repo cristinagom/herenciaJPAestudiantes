@@ -6,9 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "student_devops")
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorValue(value = "D")
-@PrimaryKeyJoinColumn(name = "idstudent")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class StudentDevops extends Student{
     @Column(name = "level")
     private int level;

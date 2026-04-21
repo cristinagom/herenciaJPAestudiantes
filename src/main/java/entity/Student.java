@@ -7,8 +7,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "student")
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorValue(value = "S")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+
 public class Student {
 
     @Id
