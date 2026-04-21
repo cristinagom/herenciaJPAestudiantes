@@ -1,6 +1,7 @@
 import entity.Card;
 import entity.Course;
 import entity.Student;
+import entity.StudentDevops;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -24,27 +25,25 @@ public class Main {
         course2.setBeginDate(LocalDate.of(2025, 9, 8));
         course2.setDescription("Acceso a Datos");
 
-        Card tarjeta1 = new Card();
-        tarjeta1.setCode("1234");
-        tarjeta1.setTipo(Type.FP);
-        Card tarjeta2 = new Card();
-        tarjeta2.setCode("5678");
-        tarjeta2.setTipo(Type.FP);
+//        Card tarjeta1 = new Card();
+//        tarjeta1.setCode("1234");
+//        tarjeta1.setTipo(Type.FP);
+//        Card tarjeta2 = new Card();
+//        tarjeta2.setCode("5678");
+//        tarjeta2.setTipo(Type.FP);
 
         Student davidE = new Student();
         davidE.setName("David E");
         davidE.setPhone("651020567");
-        davidE.setDni("77422360J");
-        davidE.setCard(tarjeta1);
+        //davidE.setCard(tarjeta1);
 
         Student miguelon = new Student();
         miguelon.setName("Miguelon R");
         miguelon.setPhone("604088118");
-        miguelon.setCard(tarjeta2);
-        miguelon.setDni("39515907K");
-
-        tarjeta2.setStudent(miguelon);
-        tarjeta1.setStudent(davidE);
+        //miguelon.setCard(tarjeta2);
+//
+//        tarjeta2.setStudent(miguelon);
+//        tarjeta1.setStudent(davidE);
         Set<Student> students1 = course.getStudents();
         Set<Student> students2 = course2.getStudents();
         students2.add(miguelon);
@@ -60,13 +59,18 @@ public class Main {
         cursos2.add(course2);
         cursos2.add(course);
         miguelon.setCourses(cursos2);
-        em.persist(tarjeta1);
-        em.persist(tarjeta2);
+
+        StudentDevops anton = new StudentDevops();
+        anton.setName("Antón");
+        anton.setPhone("651020569");
+
         em.persist(davidE);
         em.persist(miguelon);
+        em.persist(anton);
         em.persist(course);
         em.persist(course2);
 
+        System.out.println("Se han persistido los datos");
 
         em.getTransaction().commit();
         em.close();

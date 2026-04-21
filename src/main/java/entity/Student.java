@@ -6,8 +6,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "student",
-        schema = "estudiantes")
+@Table(name = "student")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorValue(value = "S")
 public class Student {
 
     @Id
@@ -23,8 +24,6 @@ public class Student {
 
     @Column(name = "identification",
             length = 9,
-            nullable = false,
-            unique = true,
             columnDefinition = "VARCHAR(9)")
     private String dni;
 
