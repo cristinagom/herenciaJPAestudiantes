@@ -6,12 +6,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "student_devops")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorValue("devops")
 public class StudentDevops extends Student{
     @Column(name = "level")
     private int level;
     @Column(name = "tools")
     private String tools;
-
-
 }
