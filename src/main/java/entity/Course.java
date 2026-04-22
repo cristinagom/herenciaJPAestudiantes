@@ -8,8 +8,7 @@ import java.util.*;
 
 
 @Entity
-@Table(name = "course",
-        schema = "estudiantes")
+@Table(name = "course")
 
 public class Course {
 

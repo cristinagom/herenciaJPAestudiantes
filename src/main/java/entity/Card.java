@@ -5,8 +5,7 @@ import jakarta.persistence.*;
 import model.Type;
 
 @Entity
-@Table(name = "card",
-        schema = "estudiantes")
+@Table(name = "card")
 
 public class Card {
 
