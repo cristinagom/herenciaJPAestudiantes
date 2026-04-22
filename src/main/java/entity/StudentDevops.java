@@ -16,4 +16,19 @@ public class StudentDevops extends Student{
     private String tools;
 
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public String getTools() {
+        return tools;
+    }
+
+    public void setTools(String tools) {
+        this.tools = tools;
+    }
 }

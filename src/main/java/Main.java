@@ -63,6 +63,8 @@ public class Main {
         StudentDevops anton = new StudentDevops();
         anton.setName("Antón");
         anton.setPhone("651020569");
+        anton.setLevel(6);
+
 
         em.persist(davidE);
         em.persist(miguelon);
